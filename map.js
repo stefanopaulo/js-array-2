@@ -26,7 +26,9 @@ const idades = pessoas.map(obj => ({ idade: obj.idade })
 console.log(idades);
 
 const comIds = pessoas.map((obj, indice) => {
-    obj.id =  (indice + 1) * 1000;
-    return obj;
+    const newObj = { ...obj };
+    newObj.id = (indice + 1) * 1000;
+    return newObj;
 });
 console.log(comIds);
+console.log(pessoas); // sem alteração
